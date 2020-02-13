@@ -1,0 +1,12 @@
+- hosts: localhost
+  become: true
+  roles:
+   - get
+   - prepare   
+
+- hosts: "{{ domain }}"
+  user: "{{ user }}"
+  gather_facts: True
+  become: true
+  roles:
+   - deploy

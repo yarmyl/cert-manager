@@ -1,0 +1,8 @@
+version: '3'
+services:
+  certbot:
+    image: "certbot/dns-cloudflare"
+    container_name: "certbot"
+    volumes:
+     - /home/gitlab-runner/playbooks/certs/data:/etc/letsencrypt
+     - /home/gitlab-runner/playbooks/certs/.secrets:/secrets

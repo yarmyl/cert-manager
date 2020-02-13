@@ -1,0 +1,10 @@
+- hosts: localhost
+  become: true
+  roles:
+   - prepare
+
+- hosts: "{{ HOST }}"
+  user: "{{ user }}"
+  become: true
+  roles:
+   - deploy

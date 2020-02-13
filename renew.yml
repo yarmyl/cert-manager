@@ -1,0 +1,11 @@
+- hosts: localhost
+  become: true
+  roles:
+   - renew
+   - prepare
+
+- hosts: all
+  user: "{{ user }}"
+  become: true
+  roles:
+   - deploy_all

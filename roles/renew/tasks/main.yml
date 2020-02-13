@@ -1,0 +1,2 @@
+- name: Renew
+  shell: docker-compose -f docker-compose.yaml run certbot renew

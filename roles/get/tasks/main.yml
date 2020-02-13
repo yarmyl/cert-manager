@@ -1,0 +1,7 @@
+- name: include blabla secret
+  include_vars: blabla.yml
+  when:
+   - (domain == 'blabla.com')
+
+- name: Get certs
+  shell: docker-compose -f docker-compose.yaml run certbot certonly --dns-cloudflare --dns-cloudflare-credentials {{ ini }} -d {{ domain }},*.{{ domain }} --preferred-challenges dns-01 --register-unsafely-without-email --force-renewal
